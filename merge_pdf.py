@@ -1,3 +1,4 @@
+import argparse
 import os
 from typing import Optional, List
 
@@ -29,3 +30,18 @@ def merge_pdf(files: Optional[List[str]] = None,
         return True
     else:
         return False
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Merge PDF files.')
+
+    parser.add_argument('files', nargs='*', type=str,
+                        help='PDF files to merge')
+    parser.add_argument('-o', '--output', type=str,
+                        help='Name of the resulting pdf', metavar='file')
+
+    args = parser.parse_args()
+    merge_pdf(**vars(args))
+
+if __name__ == '__main__':
+    main()
