@@ -4,7 +4,7 @@ from typing import Optional, List
 from PyPDF2 import PdfMerger
 
 
-def get_pdf_files(files: Optional[List[str]] = None) -> List[str]:
+def _get_pdf_files(files: Optional[List[str]] = None) -> List[str]:
     pdf_files = []
 
     if files:
@@ -22,7 +22,7 @@ def get_pdf_files(files: Optional[List[str]] = None) -> List[str]:
     return pdf_files
 
 
-def get_output_filename(pdf_files: List[str], output: Optional[str]) -> str:
+def _get_output_filename(pdf_files: List[str], output: Optional[str]) -> str:
     if output:
         if not output.endswith('.pdf'):
             output = f'{output}.pdf'
@@ -43,7 +43,9 @@ def merge_pdf(files: Optional[List[str]] = None,
         for pdf in pdf_files:
             merger.append(pdf)
 
-        merger.write(output_filename)
+        with open(output_filename, 'wb') as output_file:
+            merger.write(output_file)
+
         merger.close()
         return True
     else:
