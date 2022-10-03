@@ -17,7 +17,7 @@ def parse_args():
     parser.add_argument('files', nargs='*', type=str,
                         help='PDF files to merge')
     parser.add_argument('-o', '--output', type=str,
-                        help='Name of the resulting pdf', metavar='file')
+                        help='name of the output file', metavar='out')
     parser.add_argument('-V', '--version', action='version',
                         version=f'%(prog)s {__version__}')
 
