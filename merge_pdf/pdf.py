@@ -34,11 +34,11 @@ def _get_output_filename(pdf_files: List[str], output: Optional[str]) -> str:
 
 def merge_pdf(files: Optional[List[str]] = None,
               output: Optional[str] = None) -> bool:
-    pdf_files = get_pdf_files(files)
+    pdf_files = _get_pdf_files(files)
 
     if len(pdf_files) > 1:
         merger = PdfMerger()
-        output_filename = get_output_filename(pdf_files, output)
+        output_filename = _get_output_filename(pdf_files, output)
 
         for pdf in pdf_files:
             merger.append(pdf)
