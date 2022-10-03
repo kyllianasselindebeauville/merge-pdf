@@ -1,5 +1,7 @@
 import argparse
 
+from merge_pdf.version import __version__
+
 
 def parse_args():
     """Parses arguments from the command-line.
@@ -16,6 +18,8 @@ def parse_args():
                         help='PDF files to merge')
     parser.add_argument('-o', '--output', type=str,
                         help='Name of the resulting pdf', metavar='file')
+    parser.add_argument('-V', '--version', action='version',
+                        version=f'%(prog)s {__version__}')
 
     args = parser.parse_args()
     return args
