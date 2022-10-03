@@ -1,8 +1,10 @@
-import argparse
 import os
 from typing import Optional, List
 
 from PyPDF2 import PdfMerger
+
+from merge_pdf.cli import parse_args
+
 
 def merge_pdf(files: Optional[List[str]] = None,
               output: Optional[str] = None) -> bool:
@@ -33,14 +35,7 @@ def merge_pdf(files: Optional[List[str]] = None,
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Merge PDF files.')
-
-    parser.add_argument('files', nargs='*', type=str,
-                        help='PDF files to merge')
-    parser.add_argument('-o', '--output', type=str,
-                        help='Name of the resulting pdf', metavar='file')
-
-    args = parser.parse_args()
+    args = parse_args()
     merge_pdf(**vars(args))
 
 if __name__ == '__main__':
