@@ -50,3 +50,6 @@ def merge_pdf(files: Optional[List[str]] = None,
         return True
     else:
         return False
+
+
+merge = merge_pdf
