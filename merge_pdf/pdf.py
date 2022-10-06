@@ -33,7 +33,8 @@ def _get_pdf_files(files: Optional[List[str]] = None) -> List[str]:
     return pdf_files
 
 
-def _get_output_filename(pdf_files: List[str], output: Optional[str]) -> str:
+def _get_output_filename(pdf_files: List[str],
+                         output: Optional[str] = None) -> str:
     """Generates the output filename.
 
     Generates a name for the output file according to the provided name if
