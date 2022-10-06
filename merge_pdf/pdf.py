@@ -34,6 +34,18 @@ def _get_pdf_files(files: Optional[List[str]] = None) -> List[str]:
 
 
 def _get_output_filename(pdf_files: List[str], output: Optional[str]) -> str:
+    """Generates the output filename.
+
+    Generates a name for the output file according to the provided name if
+    there is one or the name of the first file with '-merged' at the end.
+
+    Args:
+        pdf_files: A list of pdf filenames.
+        output: Expected output filename.
+
+    Returns:
+        The correct output filename as a str.
+    """
     if output:
         if not output.endswith('.pdf'):
             output = f'{output}.pdf'
