@@ -5,6 +5,17 @@ from PyPDF2 import PdfMerger
 
 
 def _get_pdf_files(files: Optional[List[str]] = None) -> List[str]:
+    """Fetches existing pdf files from the provided files.
+
+    Retrieves existing pdf files from the provided files or from the current
+    directory.
+
+    Args:
+        files: A list of filenames.
+
+    Returns:
+        A list of existing pdf filenames.
+    """
     pdf_files = []
 
     if files:
