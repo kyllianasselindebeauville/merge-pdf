@@ -34,6 +34,21 @@ def _get_output_filename(pdf_files: List[str], output: Optional[str]) -> str:
 
 def merge_pdf(files: Optional[List[str]] = None,
               output: Optional[str] = None) -> bool:
+    """Merges pdf files into one output file.
+
+    Merges pdf files using the PyPDF2 module.
+
+    Args:
+        files:
+            A list containing the files to be merged.
+            [default: files in the current directory]
+        output:
+            Name of the output file.
+            [default: name of the first file with '-merged' at the end]
+
+    Returns:
+        A boolean indicating whether the files have been merged.
+    """
     pdf_files = _get_pdf_files(files)
 
     if len(pdf_files) > 1:
