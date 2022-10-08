@@ -29,3 +29,11 @@ cd merge-pdf
 ```shell
 python3 -m pip install .
 ```
+
+## Contributing
+
+Pull requests are welcome. Please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT License](LICENSE)
