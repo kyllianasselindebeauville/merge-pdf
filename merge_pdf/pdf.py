@@ -80,7 +80,8 @@ def merge_pdf(files: Optional[List[str]] = None,
         output_filename = _get_output_filename(pdf_files, output)
 
         for pdf in pdf_files:
-            merger.append(pdf)
+            with open(pdf, 'rb') as input_file:
+                merger.append(input_file)
 
         with open(output_filename, 'wb') as output_file:
             merger.write(output_file)
