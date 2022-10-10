@@ -30,6 +30,22 @@ cd merge-pdf
 python3 -m pip install .
 ```
 
+## Usage
+
+```
+usage: merge-pdf [-h] [-o out] [-V] [files ...]
+
+Merge PDF files.
+
+positional arguments:
+  files                 PDF files to merge
+
+options:
+  -h, --help            show this help message and exit
+  -o out, --output out  name of the output file
+  -V, --version         show program's version number and exit
+```
+
 ## Contributing
 
 Pull requests are welcome. Please open an issue first to discuss what you would like to change.
