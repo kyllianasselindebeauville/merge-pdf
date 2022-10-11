@@ -46,6 +46,24 @@ options:
   -V, --version         show program's version number and exit
 ```
 
+## Examples
+
+- Merge multiple PDF files *(default behavior)*.
+
+```shell
+merge-pdf file1.pdf file2.pdf file3.pdf
+```
+
+> file1-merged.pdf
+
+- Merge multiple PDF files into a specified output file.
+
+```shell
+merge-pdf -o output.pdf file1.pdf file2.pdf file3.pdf
+```
+
+> output.pdf
+
 ## Contributing
 
 Pull requests are welcome. Please open an issue first to discuss what you would like to change.
