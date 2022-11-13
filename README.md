@@ -10,24 +10,14 @@ Make sure you have [Python 3.7+](https://www.python.org/downloads/) with [pip](h
 python3 --version && python3 -m pip --version
 ```
 
+> You may need to use `python` instead of `python3` depending on your environment.
+
 ## Installation
-
-- Clone this repository.
-
-```shell
-git clone https://github.com/kyllianasselindebeauville/merge-pdf.git
-```
-
-- Change directory into it.
-
-```shell
-cd merge-pdf
-```
 
 - Use the package manager `pip` to install `merge-pdf`.
 
 ```shell
-python3 -m pip install .
+python3 -m pip install git+https://github.com/kyllianasselindebeauville/merge-pdf.git
 ```
 
 ## Usage
